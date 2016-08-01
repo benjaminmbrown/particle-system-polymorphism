@@ -1,6 +1,9 @@
 var Confetti = function(position){
-	Particle.call(this.position);
+	this.position=position.copy();
+	console.log(this.position);
+	Particle.call(this,position);
 
+	//overrides parent display function
 	this.display = function(){
 		rectMode(CENTER);
 		fill(127,this.lifespan);
